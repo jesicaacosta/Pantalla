@@ -37,8 +37,6 @@ body {
 
 
 
-
-
 /* Fecha y haora */
 .header {
     display: flex;
@@ -87,7 +85,7 @@ table {
     /* Espacio entre filas */
     table-layout: auto;
     font-family: 'Segoe UI', sans-serif;
-    font-size: 16px;
+    font-size: 1em;
 
 }
 
@@ -100,7 +98,7 @@ th {
     border-top-right-radius: 8px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    font-size: 17px;
+    font-size: .9em;
 }
 
 td {
@@ -110,7 +108,7 @@ td {
     border-bottom: 4px solid transparent;
     transition: all 0.3s ease;
     text-align: center;
-    font-size: 20px;
+    font-size: 1.1em;
     border-radius: 9px;
     border: 1px solid #fff;
 }
@@ -137,9 +135,9 @@ td.consultorio::before {
 
 /* Fila de paciente llamado */
 .llamado td {
-    background-color: #054b31 !important;
+    background-color: #cc0202 !important;
     color: #fff;
-    font-size: 2em;
+    font-size: 1.3em;
     font-weight: bold;
     animation: parpadeo 1s infinite alternate;
     border-radius: 8px;
@@ -157,7 +155,7 @@ td.consultorio::before {
     content: "▶ ";
     font-size: .9em;
     align-items: left;
-    color: #F2B84B;
+    color: #ffb936;
 }
 
 .llamado td.consultorio::after {
@@ -209,7 +207,7 @@ td.consultorio::before {
 }
 
 .footer {
-    /* Pie de pagina */
+    display: none;
     width: 100%;
     background-color: #a0c4eb;
     padding: 10px;

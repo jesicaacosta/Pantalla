@@ -1,0 +1,233 @@
+/* Colores*/
+
+:root {
+    /* Colores de fondo */
+    --fondo-claro: #ACF2EB;
+    --fondo-medio: #69BFA7;
+    --fondo-verde: #0DA67B;
+    --fondo-verde-oscuro: #118C69;
+    --fondo-verde-profundo: #07593B;
+
+    /* Colores del logo */
+    --gris-claro: #F2F2F2;
+    --amarillo: #F2B84B;
+    --azul: #4590BF;
+    --azul-oscuro: #295073;
+    --marron: #402B18;
+}
+
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #eef1f4;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    flex-wrap: wrap;
+    background-image: url('./fondo_prueba_1.webp');
+    background-size: cover;
+}
+
+
+
+
+
+/* Fecha y haora */
+.header {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    margin: 0 30px 5px 10px;
+}
+
+.logo {
+    height: 70px;
+    margin-right: 20px;
+    justify-content: flex-start;
+}
+
+#reloj {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #000;
+    text-align: right;
+}
+
+
+.container {
+    /* Contenedor principal */
+    width: 90vw;
+    height: 85vh;
+    background-color: #F2F2F2;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+    opacity: 0.8;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #535353;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    /* Espacio entre celdas */
+    border-spacing: 0 10px;
+    /* Espacio entre filas */
+    table-layout: auto;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 16px;
+
+}
+
+th {
+    /* Encabezado de la tabla */
+    background-color: #a0c4eb;
+    color: white;
+    padding: 5px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 17px;
+}
+
+td {
+    /* Celdas de la tabla */
+    background-color: #ACF2EB;
+    padding: 10px;
+    border-bottom: 4px solid transparent;
+    transition: all 0.3s ease;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 9px;
+    border: 1px solid #fff;
+}
+
+
+
+tr:nth-child(even) td {
+    background-color: #69BFA7;
+    border-radius: 9px;
+    border: 1px solid #fff;
+}
+
+tr:hover td {
+    background-color: #bcdcff;
+    transform: scale(1.01);
+}
+
+td.consultorio::before {
+    content: "Consultorio: ";
+    margin-right: 6px;
+    font-size: 20px;
+}
+
+
+/* Fila de paciente llamado */
+.llamado td {
+    background-color: #054b31 !important;
+    color: #fff;
+    font-size: 2em;
+    font-weight: bold;
+    animation: parpadeo 1s infinite alternate;
+    border-radius: 8px;
+
+}
+
+.llamado td.consultorio::before {
+    content: "Consultorio: ";
+    text-align: left;
+    font-size: 1em;
+
+}
+
+.llamado td.nombre::before {
+    content: "▶ ";
+    font-size: .9em;
+    align-items: left;
+    color: #F2B84B;
+}
+
+.llamado td.consultorio::after {
+    content: "  ◀";
+    font-size: .9em;
+    align-items: center;
+    color: #F2B84B;
+
+
+}
+
+/* Animacion de sacudida */
+@keyframes shake-horizontal {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    10% {
+        transform: translateX(-1px);
+    }
+
+    30% {
+        transform: translateX(1px);
+    }
+
+    50% {
+        transform: translateX(-1px);
+    }
+
+    90% {
+        transform: translateX(1px);
+    }
+}
+
+
+
+/* Animaciom  */
+@keyframes parpadeo {
+    from {
+        opacity: 1;
+    }
+
+    /* empiez completamente visible */
+    to {
+        opacity: 0.9;
+    }
+
+    /*  desvanece a 0.7%  */
+}
+
+.footer {
+    /* Pie de pagina */
+    width: 100%;
+    background-color: #a0c4eb;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+.oculto {
+  display: none;
+}

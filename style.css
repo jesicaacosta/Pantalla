@@ -149,11 +149,7 @@ td.consultorio::before {
 }
 
 
-.llamado td.consultorio {
-    font-size: 4vh;
-    text-align: center;
-    font-weight: bold;  
-}
+
 
 .llamado td.nombre, 
 .llamado td.consultorio {
@@ -162,11 +158,33 @@ td.consultorio::before {
     text-overflow: ellipsis;
 }
 
+/*
+.llamado td.consultorio {
+    font-size: 5vh;
+    text-align: center;
+    font-weight: bold;  
+}
 .llamado td.consultorio::before {
     content: "Consultorio ";
     text-align: left;
     font-size: 1em;
     animation: shake-horizontal 0.5s infinite alternate;
+} */
+
+.llamado td.consultorio {
+    font-size: 6vh; /* Número grande */
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+    /* Elimina font-size anterior si lo hay */
+}
+
+.llamado td.consultorio::before {
+    content: "Consultorio ";
+    font-size: 3vh; /* Tamaño pequeño solo para la palabra */
+    vertical-align: middle;
+    animation: shake-horizontal 0.5s infinite alternate;
+    margin-right: 5px;
 }
 
 .llamado td.nombre::before {

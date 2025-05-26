@@ -141,7 +141,6 @@ td.consultorio::before {
     content: "Consultorio: ";
     margin-right: 6px;
     font-size: 20px;
-    animation: shake-horizontal 0.5s infinite alternate;
 }
 
 
@@ -181,6 +180,7 @@ td.consultorio::before {
     font-size: 1.2em;
     align-items: left;
     color: #ffb936;
+    animation: parpadeo .5s infinite alternate;
 }
 
 /*
@@ -192,30 +192,6 @@ td.consultorio::before {
 }
 */
 
-/* Animacion de sacudida */
-@keyframes shake-horizontal {
-
-    0%,
-    100% {
-        transform: translateX(0);
-    }
-
-    10% {
-        transform: translateX(-1px);
-    }
-
-    30% {
-        transform: translateX(1px);
-    }
-
-    50% {
-        transform: translateX(-1px);
-    }
-
-    90% {
-        transform: translateX(1px);
-    }
-}
 
 /* Animaciom filas llamado  */
 @keyframes parpadeo {

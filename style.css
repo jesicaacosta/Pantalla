@@ -122,9 +122,14 @@ tr:hover td {
     transform: scale(1.01);
 }
 
-
 td.especialidad {
     background-color: #eef1f4;
+}
+
+td.consultorio::before {
+    content: "Consultorio ";
+    font-size: 0.6em; /* Tamaño más pequeño para pacientes normales */
+    margin-right: 5px;
 }
 
 /* Fila de paciente llamado */
@@ -149,8 +154,6 @@ td.especialidad {
     text-align: center;
     font-weight: bold;  
 }
-
-
 
 .llamado td.nombre, 
 .llamado td.consultorio {

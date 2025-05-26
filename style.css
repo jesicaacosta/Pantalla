@@ -85,8 +85,6 @@ table {
     /* Espacio entre filas */
     table-layout: auto;
     font-family: 'Segoe UI', sans-serif;
-    font-size: 1em;
-
 }
 
 th {
@@ -104,16 +102,20 @@ th {
 td {
     /* Celdas de la tabla */
     background-color: #ACF2EB;
-    padding: 10px;
+    padding: 5px;
     border-bottom: 4px solid transparent;
     transition: all 0.3s ease;
     text-align: center;
-    font-size: 1.1em;
+    font-size: 1.5em;
     border-radius: 9px;
     border: 1px solid #fff;
 }
 
-
+td:nth-child(1) {
+    width: 50%;
+    border-radius: 9px;
+    border: 1px solid #fff;
+}
 
 tr:nth-child(even) td {
     background-color: #69BFA7;
@@ -130,6 +132,7 @@ td.consultorio::before {
     content: "Consultorio: ";
     margin-right: 6px;
     font-size: 20px;
+    animation: shake-horizontal 0.5s infinite alternate;
 }
 
 
@@ -137,34 +140,36 @@ td.consultorio::before {
 .llamado td {
     background-color: #cc0202 !important;
     color: #fff;
-    font-size: 1.3em;
+    font-size: 1.8em;
     font-weight: bold;
     animation: parpadeo 1s infinite alternate;
     border-radius: 8px;
-
 }
 
+.llamado td.nombre {
+    font-size: 2em;
+    text-align: center;
+    font-weight: bold;    
+}
 .llamado td.consultorio::before {
     content: "Consultorio: ";
     text-align: left;
     font-size: 1em;
-
+    animation: shake-horizontal 0.5s infinite alternate;
 }
 
 .llamado td.nombre::before {
     content: "▶ ";
-    font-size: .9em;
+    font-size: 1.2em;
     align-items: left;
     color: #ffb936;
 }
 
 .llamado td.consultorio::after {
     content: "  ◀";
-    font-size: .9em;
+    font-size: 1.2em;
     align-items: center;
     color: #F2B84B;
-
-
 }
 
 /* Animacion de sacudida */

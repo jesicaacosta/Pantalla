@@ -59,7 +59,7 @@ function mostrarPacientes() {
             setTimeout(() => {
                 const fila = document.getElementById(`paciente-${p.id}`);
                 if (fila) fila.classList.add("oculto");
-            }, 15000); // 15000 milisegundos = 15 segundos
+            }, 1500000000000); // 15000 milisegundos = 15 segundos
         } else {
             tabla.appendChild(tr);
         }

@@ -4,40 +4,52 @@
 <head>
     <meta charset="UTF-8">
     <title>Pacientes</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../static/css/pantalla_consultorios.css">
 </head>
 
 <body>
 
-        <div class="header">
-            <img src="./logo_mdm.webp" alt="Logo" class="logo">
-            <div id="reloj"></div>
+    <!-- logo y reloj -->
+    <div class="header">
+        <!-- logo -->
+        <img src="../static/img/logo.png" alt="Logo" class="logo">
+        <!-- la hora actual actualizado por JS -->
+        <div id="reloj"></div>
+    </div>
 
+    <!-- Contenedor principal  -->
+    <div class="container">
+        <div class="tabla-wrapper">
+            <!-- Tabla que muestra los turnos de pacientes -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Consultorio</th>
+                        <th>Especialidad</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-pacientes">
+                    <!-- El cuerpo de la tabla se llena dinámicamente usando Jinja2.-->
+                    {% for turno in turnos %}
+                    <!-- 'turnos' es una lista de objetos Turno que viene desde la función pantalla_consultorios en app.py -->
+                    <tr>
+                        <!-- Nombre y apellido del paciente, de la clase Paciente -->
+                        <td>{{ turno.paciente.nombre }} {{ turno.paciente.apellido }}</td>
+                        <!-- Consultorio asignado al turno, de la clase Turno -->
+                        <td>{{ turno.consultorio }}</td>
+                        <!-- Especialidad del turno, de la clase Turno -->
+                        <td>{{ turno.especialidad }}</td>
+                    </tr>
+                    <!--Cada 'turno' tiene una relación con un objeto Paciente (turno.paciente).-->
+                    {% endfor %}
+                </tbody>
+            </table>
         </div>
 
-
-        <div class="container">
-            <div class="tabla-wrapper">
-
-            <table>
-                <!-- Encabezado de la tabla  
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Consultorio</th>
-                    <th>Especialidad</th>
-                </tr>
-            </thead>-->
-
-                <tbody id="tabla-pacientes"></tbody>
-                <!--  se llena la tabla con los pacientes consumidas de la db -->
-            </table>
-            </div>
-
-        <script src="script.js">
-
+        <!--  archivo JS para funcionalidades adicionales -->
+        <script src="../static/js/pantalla_consultorios.js">
         </script>
-
     </div>
 
 </body>
@@ -45,6 +57,14 @@
 <footer>
     <div class="footer">
         <p> <a href=""></a> </p>
+    </div>
 </footer>
 
 </html>
+
+<!--
+Notas:
+- El archivo utiliza la plantilla Jinja2 para recorrer la lista de turnos que viene desde Flask (app.py).
+- Cada fila de la tabla representa un turno, mostrando datos del paciente y del turno.
+- El CSS controla el diseño visual y el JS puede usarse para actualizar dinámicamente elementos como el reloj.
+-->

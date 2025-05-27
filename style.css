@@ -1,4 +1,3 @@
-
 /* Colores*/
 
 :root {
@@ -17,8 +16,6 @@
     --marron: #402B18;
 }
 
-
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -36,9 +33,7 @@ body {
     background-size: cover;
 }
 
-
-
-/* Fecha y haora */
+/* Fecha y hora */
 .header {
     display: flex;
     width: 100%;
@@ -60,10 +55,9 @@ body {
     text-align: right;
 }
 
-
 .container {
     width: 90vw;
-    height: 75vh;
+   height: 75vh;
     background-color: #F2F2F2;
     padding: 10px;
     border-radius: 5px;
@@ -74,24 +68,37 @@ body {
     overflow: hidden;
 }
 
-
-.tabla-wrapper {
+.tabla-wrapper { /*Contenedor de la tabla*/
     flex: 1;
     overflow: hidden;
     display: flex;
     flex-direction: column;
 }
 
-
 table {
     width: 100%;
-    height: 100%;
     border-collapse: separate;
     border-spacing: 5px;
     table-layout: fixed;
 }
 
+thead tr {
+    background-color: var(--fondo-verde-oscuro);
+}
 
+thead th {
+    color: #fff;
+    font-size: 3vh;
+    padding: 8px 0;
+    border-radius: 8px;
+    border: 1px solid #fff;
+    text-align: center;
+    font-weight: bold;
+}
+
+tbody tr {
+    transition: background 0.3s;
+}
 
 td {
     /* Celdas de la tabla */
@@ -102,14 +109,14 @@ td {
     text-align: center;
     font-size: 5vh;
     border-radius: 9px;
-    border: 1px solid #fff;
+    word-break: break-word;
 }
 
-td:nth-child(1) {
-    width: 50%;
-    border-radius: 9px;
-    border: 1px solid #fff;
+td:nth-child(2) {
+    width: 25%;
+    font-weight: bold;
 }
+
 
 tr:nth-child(even) td {
     background-color: #69BFA7;
@@ -122,13 +129,10 @@ tr:hover td {
     transform: scale(1.01);
 }
 
-td.especialidad {
-    background-color: #eef1f4;
-}
-
+ 
 td.consultorio::before {
     content: "Consultorio ";
-    font-size: 0.6em; /* Tamaño más pequeño para pacientes normales */
+    font-size: 0.6em;
     margin-right: 5px;
 }
 
@@ -145,43 +149,26 @@ td.consultorio::before {
 .llamado td.nombre {
     font-size: 6vh;
     text-align: center;
-    font-weight: bold;    
+    font-weight: bold;
 }
 
-
-
-
-.llamado td.nombre, 
+.llamado td.nombre,
 .llamado td.consultorio {
     white-space: wrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-/*
 .llamado td.consultorio {
-    font-size: 5vh;
-    text-align: center;
-    font-weight: bold;  
-}
-.llamado td.consultorio::before {
-    content: "Consultorio ";
-    text-align: left;
-    font-size: 1em;
-    animation: shake-horizontal 0.5s infinite alternate;
-} */
-
-.llamado td.consultorio {
-    font-size: 6vh; /* Número grande */
+    font-size: 6vh;
     text-align: center;
     font-weight: bold;
     position: relative;
-    /* Elimina font-size anterior si lo hay */
 }
 
 .llamado td.consultorio::before {
     content: "Consultorio ";
-    font-size: 3vh; /* Tamaño pequeño solo para la palabra */
+    font-size: 3vh;
     vertical-align: middle;
     animation: shake-horizontal 0.5s infinite alternate;
     margin-right: 5px;
@@ -195,45 +182,15 @@ td.consultorio::before {
     animation: parpadeo .5s infinite alternate;
 }
 
-/*
-.llamado td.consultorio::after {
-    content: "  ◀";
-    font-size: 1.2em;
-    align-items: center;
-    color: #F2B84B;
-}
-*/
-
-
-/* Animaciom filas llamado  */
+/* Animación filas llamado  */
 @keyframes parpadeo {
     from {
         opacity: 1;
     }
 
-    /* empiez completamente visible */
     to {
         opacity: 0.9;
     }
-
-    /*  desvanece a 0.7%  */
-}
-
-td:nth-child(3) {
-    font-size: 3.5vh; /* Tamaño ligeramente menor que el nombre */
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    padding: 0 5px;
-    max-width: 30%; /* Asegura que no ocupe más del 30% del ancho */
-    width: 30%; /* Fija el ancho */
-}
-
-/* Para pacientes llamados */
-.llamado td:nth-child(3) {
-    font-size: 4vh; /* Un poco más grande cuando está llamado */
-    background-color: #cc0202 !important;
-    color: white;
 }
 
 
@@ -251,18 +208,6 @@ td:nth-child(3) {
     box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
 }
 
-
 .oculto {
     display: none;
 }
-
-
-
-
-
-
-
-
-
-
-

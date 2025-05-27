@@ -57,7 +57,7 @@ body {
 
 .container {
     width: 90vw;
-   height: 75vh;
+    height: 75vh;
     background-color: #F2F2F2;
     padding: 10px;
     border-radius: 5px;
@@ -82,19 +82,17 @@ table {
     table-layout: fixed;
 }
 
-thead tr {
+thead tr { /* Encabezado de la tabla */
     background-color: var(--fondo-verde-oscuro);
-}
-
-thead th {
     color: #fff;
     font-size: 3vh;
-    padding: 8px 0;
+    padding: 3px 0;
     border-radius: 8px;
     border: 1px solid #fff;
     text-align: center;
     font-weight: bold;
 }
+
 
 tbody tr {
     transition: background 0.3s;
@@ -120,6 +118,8 @@ td:nth-child(2) {
 
 tr:nth-child(even) td {
     background-color: #69BFA7;
+    border:2px solid red;
+
     border-radius: 9px;
     border: 1px solid #fff;
 }
@@ -136,7 +136,8 @@ td.consultorio::before {
     margin-right: 5px;
 }
 
-/* Fila de paciente llamado */
+/* Estilos dependiento del estado del turno */
+
 .llamado td {
     background-color: #cc0202 !important;
     color: #fff;
@@ -145,6 +146,7 @@ td.consultorio::before {
     border-radius: 8px;
     padding: 5px auto;
 }
+
 
 .llamado td.nombre {
     font-size: 6vh;
@@ -182,6 +184,29 @@ td.consultorio::before {
     animation: parpadeo .5s infinite alternate;
 }
 
+.pendiente td {
+    background-color: #ffe066 !important; /* amarillo */
+    color: #222;
+    font-weight: bold;
+}
+
+.atendido td {
+    display: none;
+}
+/* ...existing code... */
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Animación filas llamado  */
 @keyframes parpadeo {
     from {
@@ -210,13 +235,4 @@ td.consultorio::before {
 
 .oculto {
     display: none;
-}
-
-
-
-
-
-/*PROBANDO JS ELIMINAR */
-.espera tr {
-    background-color: #f700ea !important;
 }

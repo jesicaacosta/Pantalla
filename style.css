@@ -211,3 +211,12 @@ td.consultorio::before {
 .oculto {
     display: none;
 }
+
+
+
+
+
+/*PROBANDO JS ELIMINAR */
+.espera tr {
+    background-color: #f700ea !important;
+}

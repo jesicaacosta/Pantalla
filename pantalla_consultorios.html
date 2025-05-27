@@ -33,13 +33,13 @@
                     <!-- El cuerpo de la tabla se llena dinámicamente usando Jinja2.-->
                     {% for turno in turnos %}
                     <!-- 'turnos' es una lista de objetos Turno que viene desde la función pantalla_consultorios en app.py -->
-                    <tr>
-                        <!-- Nombre y apellido del paciente, de la clase Paciente -->
+                    <tr class="{{ turno.estado}}">  <!--agrega clase pendient, llamado o atendido seg-->
+                        <!-- Cada fila representa un turno, con datos del paciente y del consultorio -->
                         <td>{{ turno.paciente.nombre }} {{ turno.paciente.apellido }}</td>
                         <!-- Consultorio asignado al turno, de la clase Turno -->
                         <td>{{ turno.consultorio }}</td>
                         <!-- Especialidad del turno, de la clase Turno -->
-                        <td>{{ turno.especialidad }}</td>                    
+                        <td>{{ turno.especialidad }}</td>     
                     </tr>
                     <!--Cada 'turno' tiene una relación con un objeto Paciente (turno.paciente).-->
                     {% endfor %}
